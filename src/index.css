@@ -1,0 +1,30 @@
+#logo{
+    background-image:url(/src/assets/loguini.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100px;
+    height:100px
+    
+    
+}
+
+#slogan {
+    font-family: 'Lugrasimo', cursive;
+    color: white;
+    font-size: 40px;
+}
+
+#carrito{
+    font-size: 40px;
+    color:white;
+}
+/* 
+#numero{    
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    border: "12px solid green";
+    width: "5px";
+    height: "5px";
+    
+}  */
