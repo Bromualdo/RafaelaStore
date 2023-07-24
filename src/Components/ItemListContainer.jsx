@@ -10,7 +10,7 @@ const ItemListContainer = ({greeting}) => {
       flexDirection='column' 
     alignItems="center" 
     justifyContent="center"  
-    width="200px" height="175px">
+    >
         <p>{greeting}</p>
       <Spacer/>
       <Item/>
