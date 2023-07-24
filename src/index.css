@@ -18,13 +18,11 @@
     font-size: 40px;
     color:white;
 }
-/* 
-#numero{    
-    background-color: black;
-    color: white;
-    border-radius: 50px;
-    border: "12px solid green";
-    width: "5px";
-    height: "5px";
+ 
+.botones{        
+    background-color: rgb(174, 128, 174);
+   
+   
     
-}  */
+    
+}

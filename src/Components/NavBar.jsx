@@ -28,7 +28,8 @@ const NavBar = () => {
           <MenuButton
             as={Button}
             rightIcon={<ChevronDownIcon />}
-            bgColor="rgba(89,63,111,1)"
+            bgColor="rgba(89,63,111,0.01)"
+            
             color="white"
             alignItems="center"
             _hover={{ bg: 'rgba(160,156,182,100)' }}
