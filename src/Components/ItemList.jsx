@@ -30,16 +30,16 @@ const ItemList = () => {
 
     
   return (
-    <>
+    <div >
       {productos.map((p)=>{
         return(
-          <div >
+          
           <Item key={p.id} nombre={p.nombre} precio={p.precio} imagen={p.src} />
-          </div>
+          
         )
       })}
        
-    </>
+    </div>
   )
 }
 
