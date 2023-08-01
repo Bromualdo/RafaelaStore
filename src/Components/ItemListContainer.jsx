@@ -1,9 +1,14 @@
 import React from 'react'
-import Item from './Item'
 import { Spacer, Flex } from '@chakra-ui/react'
+import ItemList from "./ItemList"
 
 const ItemListContainer = ({greeting}) => {
     
+
+
+
+
+
   return (
     <Flex 
     marginTop="40px"
@@ -13,8 +18,8 @@ const ItemListContainer = ({greeting}) => {
     >
         <p>{greeting}</p>
       <Spacer/>
-      <Item/>
-
+      <ItemList/>
+      
     </Flex>
     
   )
