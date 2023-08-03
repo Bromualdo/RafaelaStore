@@ -11,36 +11,41 @@ const Item = ({nombre,precio,imagen}) => {
     
           <Card
             w="250px"
+            height="350px"
             maxH="sm"
             display="flex"
             flexDirection="column"
             borderRadius="0"
           >
-            <Image src="url(./)" w="100%" />
+            <Image src={imagen} w="100%" h="200px" />
             <Stack mt="2">
               <Heading size="md">{nombre}</Heading>
               <Divider />
               <Flex alignContent="center" alignItems="center">
-                <Text color="purple.600" fontSize="3xl">
+                <Text color="purple.600" fontSize="3xl" marginLeft="10px">
                   {precio}
-                </Text>
-                <Spacer />
-
-                <ItemCount />
+                </Text>                              
               </Flex>
             </Stack>
+           <Flex justifyContent="space-evenly" marginTop="20px" >
+           <Button bg="purple.100"
+           color="white"
+           fontSize="20px"
+           
+           >Detalles</Button>
             <Button
               variant="ghost"
               color="white"
-              fontSize="40px"
+              fontSize="15px"
               bg="purple.300"
-              borderRadius="0"
-              shadow="dark-lg"
+              
               display="flex"
               alignContent="center"
             >
               Add to cart
             </Button>
+            
+            </Flex>
           </Card>
       
    

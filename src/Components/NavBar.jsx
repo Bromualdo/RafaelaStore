@@ -9,14 +9,18 @@ import {
   Button,
   Spacer,
   Divider,
+  Link,
 } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import CartWidget from "./CartWidget";
+import Cart from "./Cart";
 
 const NavBar = () => {
   return (
     <Flex bgGradient="linear-gradient(90deg, rgba(89,63,111,1) 0%, rgba(89,63,111,1) 30%, rgba(116,94,134,1) 60%, rgba(116,94,134,1) 100%)">
-      <Box id="logo"></Box>
+      <Box id="logo">
+        
+      </Box>
       
 
       
@@ -45,7 +49,8 @@ const NavBar = () => {
       </Box>
       <Spacer />
       <Box display="flex" flexDirection="column" justifyContent="flex-end">
-        <CartWidget></CartWidget>
+        
+        <CartWidget/>
       </Box>
     </Flex>
   );
