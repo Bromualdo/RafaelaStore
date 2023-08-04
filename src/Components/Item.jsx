@@ -1,16 +1,16 @@
 import React from "react";
 import ItemCount from "./ItemCount";
 import {  Button,  Flex,  Card,  Divider,  Stack,  Heading,  Image,  Text,  Spacer,} from "@chakra-ui/react";
+import { Link} from "react-router-dom";
 
-const Item = ({nombre,precio,imagen}) => {
+const Item = ({nombre,precio,imagen,id}) => {
   
  
-  
- 
+ console.log("prueba")
   return (     
     
           <Card
-            w="250px"
+            w="200px"
             height="350px"
             maxH="sm"
             display="flex"
@@ -27,12 +27,15 @@ const Item = ({nombre,precio,imagen}) => {
                 </Text>                              
               </Flex>
             </Stack>
-           <Flex justifyContent="space-evenly" marginTop="20px" >
+           <Flex justifyContent="space-evenly" marginTop="20px" gap="0.5em" >
+            <Link to={`/item/${id}`}>
            <Button bg="purple.100"
            color="white"
-           fontSize="20px"
-           
-           >Detalles</Button>
+           fontSize="20px">
+            Detalles
+            </Button>
+            </Link>
+            
             <Button
               variant="ghost"
               color="white"
