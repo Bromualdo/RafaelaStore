@@ -44,11 +44,11 @@ const NavBar = () => {
               Cochecitos
               </MenuItem>
             </Link >
-            <MenuItem _hover={{ bg: 'rgba(160,156,182,100)',color:"white" }}>
               <Link to={`/category/${'cat3'}`}>
+            <MenuItem _hover={{ bg: 'rgba(160,156,182,100)',color:"white" }}>
               Puericultura y Alimentación
-              </Link>
               </MenuItem>
+              </Link>
           </MenuList>
         </Menu>
         </Box>

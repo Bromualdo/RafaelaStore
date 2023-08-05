@@ -1,5 +1,6 @@
 import React from 'react'
 import ItemDetail from './ItemDetail'
+import { Flex } from '@chakra-ui/react'
 
 const ItemDetailContainer = () => {
  
@@ -36,9 +37,9 @@ const ItemDetailContainer = () => {
 
  
   return (
-    <>
+    <Flex justifyContent="center">
     <ItemDetail productos={productos}/>
-    </>
+    </Flex>
   )
 }
 

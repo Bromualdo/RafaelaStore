@@ -11,7 +11,6 @@ const Item = ({nombre,precio,imagen,id}) => {
     
           <Card
             w="200px"
-            height="350px"
             maxH="sm"
             display="flex"
             flexDirection="column"
@@ -19,9 +18,9 @@ const Item = ({nombre,precio,imagen,id}) => {
           >
             <Image src={imagen} w="100%" h="200px" />
             <Stack mt="2">
-              <Heading size="md">{nombre}</Heading>
+              <Heading size="">{nombre}</Heading>
               <Divider />
-              <Flex alignContent="center" alignItems="center">
+              <Flex alignContent="center" alignItems="center" justifyContent="center">
                 <Text color="purple.600" fontSize="3xl" marginLeft="10px">
                   {precio}
                 </Text>                              
@@ -30,8 +29,10 @@ const Item = ({nombre,precio,imagen,id}) => {
            <Flex justifyContent="space-evenly" marginTop="20px" gap="0.5em" >
             <Link to={`/item/${id}`}>
            <Button bg="purple.100"
-           color="white"
-           fontSize="20px">
+           color="rgba(89,63,111,1)"
+           fontSize="20px"
+           
+           border="2px solid purple">
             Detalles
             </Button>
             </Link>
@@ -44,6 +45,7 @@ const Item = ({nombre,precio,imagen,id}) => {
               
               display="flex"
               alignContent="center"
+              border="2px solid purple"
             >
               Add to cart
             </Button>
