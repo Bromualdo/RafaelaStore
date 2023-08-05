@@ -1,8 +1,9 @@
 import React from 'react'
+import { Text } from '@chakra-ui/react'
 
 const Cart = () => {
   return (
-    <div>Cart</div>
+    <Text display="flex"  justifyContent="center"      fontSize="50px">NO HAY ITEMS EN EL CARRITO</Text>
   )
 }
 

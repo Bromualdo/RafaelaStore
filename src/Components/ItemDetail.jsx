@@ -31,7 +31,7 @@ const ItemDetail = ({productos}) => {
                       {p.precio}
                     </Text>
                     <Spacer/>
-                    <Box display="flex" alignItems="flex-end" marginBottom="5px">
+                    <Box display="flex" alignItems="flex-end"  marginBottom="5px">
                     <Text marginRight="10px" fontSize="20px">Cantidad</Text>
                     <ItemCount/>
                     </Box>
