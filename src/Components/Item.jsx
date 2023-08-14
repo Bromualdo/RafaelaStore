@@ -6,7 +6,7 @@ import { Link} from "react-router-dom";
 const Item = ({nombre,precio,imagen,id}) => {
   
  
- console.log("prueba")
+ 
   return (     
     
           <Card

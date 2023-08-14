@@ -1,13 +1,21 @@
-import React from 'react'
 import ItemCount from './ItemCount'
 import { useParams } from 'react-router-dom'
-import {  Box,Image,Button,  Flex,CardBody,CardFooter,  Card,  Divider,  Stack,  Heading,Text,  Spacer,ButtonGroup} from "@chakra-ui/react";
+import React, { useContext } from 'react'
+import { CartContext } from '../context/ShoppingCartContext'
+import {  Box,Image,Button,  Flex,CardBody,  Card,  Stack,  Heading,Text,  Spacer, filter} from "@chakra-ui/react";
+
+let acc=0
 
 const ItemDetail = ({productos}) => {
   const {id}=useParams()
-  console.log(productos)
+  const {cart,setCart}=useContext(CartContext)
   const filteredProducts= productos.filter((producto)=> producto.id==id)
-
+   
+  console.log("esto es ",cart)
+  const handleClick =()=>{
+    setCart(current=>[...current,filteredProducts[0]])
+  }
+  
   
   return (
       <Flex marginTop="20px" >
@@ -37,7 +45,7 @@ const ItemDetail = ({productos}) => {
                     </Box>
                     </Box>
                   </Stack>
-                  <Button variant="solid" colorScheme="purple" w="100%">
+                  <Button variant="solid" colorScheme="purple" w="100%" onClick={handleClick}>
                      COMPRAR
                     </Button>
                 </CardBody>

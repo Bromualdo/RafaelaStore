@@ -1,8 +1,14 @@
-import React from "react";
+
 import { FaShoppingBag } from "react-icons/fa";
 import { Flex, Box,Spacer} from "@chakra-ui/react";
+import React, { useContext } from 'react'
+import { CartContext } from '../context/ShoppingCartContext'
 
 const CartWidget = () => {
+  
+const {cart,setCart}=useContext(CartContext)
+const cartLen=cart.length
+
   return (
     <Flex position="relative" marginRight="3" marginBottom="1">       
       <Box>
@@ -20,7 +26,7 @@ const CartWidget = () => {
         borderRadius="10"     
         
         >
-        <p>3</p>
+        <p>{cartLen}</p>
       </Box>
       
     </Flex>

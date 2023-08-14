@@ -7,6 +7,11 @@ import { useEffect, useState } from "react";
 const ItemCount = () => {
   const [contador, setContador] = useState(0);
 
+// const [qty,setQty]=useState(0)
+//  const onAdd =()=>{
+  // push a cart =[{id , nombre , qty , precio}]
+// }
+
   const sumar = () => {
 
     contador<10 ? setContador(contador + 1) : setContador(contador); 
