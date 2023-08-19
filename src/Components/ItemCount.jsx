@@ -1,16 +1,14 @@
-import React from "react";
+import React, { useContext } from 'react'
+import { CartContext } from '../context/ShoppingCartContext'
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { IconButton } from "@chakra-ui/react";
-import { Flex, Box, Spacer,Text } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { Flex,Spacer,Text } from "@chakra-ui/react";
 
-const ItemCount = () => {
-  const [contador, setContador] = useState(0);
 
-// const [qty,setQty]=useState(0)
-//  const onAdd =()=>{
-  // push a cart =[{id , nombre , qty , precio}]
-// }
+
+const ItemCount =() => {
+  const {contador, setContador} = useContext(CartContext);  
+  
 
   const sumar = () => {
 
@@ -18,12 +16,8 @@ const ItemCount = () => {
   };
 
   const restar = () => {
-    contador>0 ? setContador(contador - 1) : setContador(contador);
-  };
-
-  const reset = () => {
-    setContador(0);
-  };
+    contador>1 ? setContador(contador - 1) : setContador(contador);
+  }; 
 
   return (
     <div>

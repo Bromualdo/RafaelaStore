@@ -4,16 +4,29 @@ import React, { useContext } from 'react'
 import { CartContext } from '../context/ShoppingCartContext'
 import {  Box,Image,Button,  Flex,CardBody,  Card,  Stack,  Heading,Text,  Spacer, filter} from "@chakra-ui/react";
 
-let acc=0
+
 
 const ItemDetail = ({productos}) => {
+  const acc=0
   const {id}=useParams()
   const {cart,setCart}=useContext(CartContext)
+  const {contador,setContador}=useContext(CartContext)
   const filteredProducts= productos.filter((producto)=> producto.id==id)
-   
-  console.log("esto es ",cart)
+  const precioTotal=(number)=>{
+
+    let total=number*contador
+    
+    return (total)
+    
+    
+  }
+  
   const handleClick =()=>{
+    const filter=filteredProducts[0]
+    setContador(current=>filter.cantidad=current)
     setCart(current=>[...current,filteredProducts[0]])
+    setContador(1)
+    console.log(filter)
   }
   
   
@@ -36,12 +49,12 @@ const ItemDetail = ({productos}) => {
                     <Text>{p.descripcion}</Text>
                     <Box display="flex" >
                     <Text color="purple.600" fontSize="50px">
-                      {p.precio}
+                      {precioTotal(p.precio)+" $"}
                     </Text>
                     <Spacer/>
                     <Box display="flex" alignItems="flex-end"  marginBottom="5px">
                     <Text marginRight="10px" fontSize="20px">Cantidad</Text>
-                    <ItemCount/>
+                    <ItemCount cuenta={acc}/>
                     </Box>
                     </Box>
                   </Stack>
