@@ -5,7 +5,6 @@ import { Link} from "react-router-dom";
 
 const Item = ({nombre,precio,imagen,id,descripcion}) => {
   
- console.log(descripcion)
  
 
   return (     

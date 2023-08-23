@@ -2,8 +2,6 @@ import React from "react";
 import {  Flex,  Box,  Menu,  MenuButton,  MenuList,  MenuItem,  Button,  Spacer} from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import CartWidget from "./CartWidget";
-import Cart from "./Cart";
-import { color } from "framer-motion";
 import {Link} from 'react-router-dom'
 
 const NavBar = () => {

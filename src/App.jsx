@@ -8,7 +8,7 @@ import Contact from './Components/Contact'
 import Cart from './Components/Cart'
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import ShoppingCartContext from './context/ShoppingCartContext'
-import ComponenteA from './Components/ComponenteA'
+
 
 
 const App = () => {
@@ -17,8 +17,7 @@ const App = () => {
       <BrowserRouter>
 
         <ShoppingCartContext>     
-        <NavBar />
-        {/* <ComponenteA/> */}
+        <NavBar />        
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/about" element={<About />} />
