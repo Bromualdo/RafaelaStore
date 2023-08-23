@@ -4,7 +4,7 @@ const Eventos = () => {
     
     const [nombre,setNombre]=useState("")
 
-    console.log(nombre)
+    
 
     const handleSubmit=(e)=>{
         e.preventDefault()

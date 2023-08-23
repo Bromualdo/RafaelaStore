@@ -7,11 +7,7 @@ import NoHayItems from './NohayItems'
 const Cart = () => {
   const {cart,setCart}=useContext(CartContext)
 
-  const emptyCart=()=>{
-    
-    setCart(cart.splice(0,cart.length))
-   
-  }  
+  
 
   let acu=0
   let acutotal=0

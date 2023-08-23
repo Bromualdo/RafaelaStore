@@ -10,12 +10,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyC9Q2T17UPlrTkJWwElSHU_Nh341mSDnZQ",
-  authDomain: "rafaela-store-2ed7f.firebaseapp.com",
-  projectId: "rafaela-store-2ed7f",
-  storageBucket: "rafaela-store-2ed7f.appspot.com",
-  messagingSenderId: "150790484156",
-  appId: "1:150790484156:web:30c5ca66d084d92f7320b9"
+  apiKey: "AIzaSyALgpiINNq71R89IC-ycUpjaXEJWdNOzS8",
+  authDomain: "rafaela-store-e7c77.firebaseapp.com",
+  projectId: "rafaela-store-e7c77",
+  storageBucket: "rafaela-store-e7c77.appspot.com",
+  messagingSenderId: "844539887925",
+  appId: "1:844539887925:web:afb4bc9e3e337d5f790c7c"
 };
 
 // Initialize Firebase

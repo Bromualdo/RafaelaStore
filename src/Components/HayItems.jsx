@@ -14,7 +14,7 @@ const HayItems = () => {
     useEffect(()=>{
         setTimeout(()=>{        
         setLoading(false)
-    },5000)},[])
+    },3000)},[])
 
     if(loading){return <Loading/>}
         
@@ -24,7 +24,7 @@ const HayItems = () => {
     console.log(cart)
    
   } 
-  
+  //hay que implementar reduce en vez de esto//
   let acu=0
   let acutotal=0
 
@@ -76,4 +76,4 @@ const HayItems = () => {
   )
 }
 
-export default HayItems
+export default React.memo(HayItems)

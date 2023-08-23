@@ -37,7 +37,7 @@ const ItemDetailContainer = () => {
 
  
   return (
-    <Flex justifyContent="center">
+    <Flex justifyContent="center" alignItems="center">
     <ItemDetail productos={productos}/>
     </Flex>
   )
