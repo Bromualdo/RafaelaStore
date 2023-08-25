@@ -9,19 +9,24 @@ const HayItems = () => {
     const[loading,setLoading]=useState(true)
     const[elemento,setElemento]=useState([])
     const {cart,setCart}=useContext(CartContext)
-
     
     useEffect(()=>{
         setTimeout(()=>{        
         setLoading(false)
-    },3000)},[])
+    },1000)},[])
+
+    const removeItem=(id)=>{
+      
+      const updatedCart=cart.filter(item=>item.id!==id)
+      console.log("jelou",updatedCart,id);
+      setCart(updatedCart)
+    }
 
     if(loading){return <Loading/>}
         
     const emptyCart=()=>{
     
-    cart.splice(0,cart.length)
-    console.log(cart)
+    setCart([])
    
   } 
   //hay que implementar reduce en vez de esto//
@@ -34,10 +39,8 @@ const HayItems = () => {
     {
         
         cart.map((p)=>{
-          const removeIt=()=>{
-            cart.pop(cart[p])
-            console.log(cart)
-          }
+          
+          
           acu=p.precio*p.cantidad
           acutotal+=acu
         return(
@@ -59,7 +62,7 @@ const HayItems = () => {
             
             </Box>
             </Box>
-            <button onClick={removeIt}>x</button>
+            <button onClick={()=>removeItem(p.id)}>x</button>
           </Box>
           
           </Card>

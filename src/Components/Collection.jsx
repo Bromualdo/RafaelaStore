@@ -34,7 +34,7 @@ const Collection = () => {
           <div key={product.Nombre}>
             <h3>Producto: {product.Nombre}</h3>
             <h2>Categoria: {product.Categoria}</h2>
-            
+            <Image src={product.Imagen}/>
           </div>
         ))
       }
