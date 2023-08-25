@@ -52,8 +52,9 @@ const ItemListContainer = () => {
     .catch((error)=>{
       console.log(error)
     }) 
-
+    
     const filteredProducts=products.filter((producto)=>producto.Categoria === category)
+   
   return (
     <Flex 
     marginTop="40px"
@@ -61,7 +62,7 @@ const ItemListContainer = () => {
     justifyContent="center"
     >      
             
-      <ItemList productos={filteredProducts}/>
+      <ItemList  productos={filteredProducts}/>
       
     </Flex>
     

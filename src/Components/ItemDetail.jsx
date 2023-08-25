@@ -12,12 +12,13 @@ const ItemDetail = ({productos}) => {
   const {cart,setCart}=useContext(CartContext)
   const {contador,setContador}=useContext(CartContext)
   const filteredProducts= productos.filter((producto)=> producto.id==id)
-  const precioTotal=(number)=>{
+    const precioTotal=(number)=>{
 
     let total=number*contador    
     return (total)
   
   }
+  console.log(filteredProducts);
   
   const handleClick =()=>{
     const filter=filteredProducts[0]

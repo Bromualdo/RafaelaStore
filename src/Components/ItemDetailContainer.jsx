@@ -41,9 +41,9 @@ const ItemDetailContainer = () => {
 
 
   const getProductos=new Promise((resolve, reject)=>{
-      if (productos.length > 0){
+      if (products.length > 0){
         setTimeout(() => {
-          resolve(productos)
+          resolve(products)
         },2000)
       }else{
         reject (new Error("No hay datos"))
