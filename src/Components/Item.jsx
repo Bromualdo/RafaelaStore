@@ -7,8 +7,10 @@ const Item = ({nombre,precio,imagen,id,descripcion}) => {
   
  
 
-  return (     
-    <Box display="flex" flexDirection="column">
+  return (    
+     
+    <Box display="flex" flexDirection="column" alignItems="center">
+      
           <Card
             w="200px"
             

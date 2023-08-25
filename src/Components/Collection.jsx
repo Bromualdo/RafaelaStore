@@ -1,17 +1,16 @@
+import Item from './Item'
 import {useEffect, useState} from 'react'
 import { collection, getDocs, getFirestore } from 'firebase/firestore'
-import {Image} from '@chakra-ui/react'
-
+import {Flex} from "@chakra-ui/react";
 
 
 const Collection = () => {
   const [products,setProducts] =useState([])
  
  
-  console.log(products);
   
-     useEffect(()=>{
-    
+  
+     useEffect(()=>{   
    
       const database= getFirestore()
       const miColeccion=collection(database,"Productos")
@@ -26,19 +25,15 @@ const Collection = () => {
  
 
   return (
-    <div>
-      <h1>Productos</h1>
-      
-      {
-        products.map((product)=>(
-          <div key={product.Nombre}>
-            <h3>Producto: {product.Nombre}</h3>
-            <h2>Categoria: {product.Categoria}</h2>
-            <Image src={product.Imagen}/>
-          </div>
-        ))
-      }
-    </div>
+    <Flex w="70%" h="50%"   flexWrap="wrap" gap="2em" justifyContent="flex-end" alignItems="flex-end" alignContent="flex-end">
+      {products.map((p)=>{
+        return(
+          <Item key={p.id} id={p.id} nombre={p.Nombre} imagen={p.Imagen} precio={p.Precio+" $"}/>
+        
+        )
+      })}
+       
+    </Flex>
   )
 }
 

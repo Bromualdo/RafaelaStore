@@ -1,12 +1,27 @@
 import React from 'react'
 import { Spacer, Flex, Divider, Box } from '@chakra-ui/react'
+import {useEffect, useState} from 'react'
+import { collection, getDocs, getFirestore } from 'firebase/firestore'
 import ItemList from "./ItemList"
 import {useParams} from 'react-router-dom'
 
 
 
 const ItemListContainer = () => {
+    const [products,setProducts] =useState([])
     const {category}=useParams()
+
+    useEffect(()=>{   
+   
+      const database= getFirestore()
+      const miColeccion=collection(database,"Productos")
+      getDocs(miColeccion).then((snapshot)=>{
+      const docs = snapshot.docs.map((doc)=>doc.data())
+      setProducts(docs)
+      
+    })
+  }
+  ,[])
 
   const productos = [
     {id:1, nombre:"Producto A", precio:"300",src:  "../src/assets/jugete1.png" ,descripcion:"soy el item 1", stock:5,categoria:"cat1",cantidad:1},
@@ -38,7 +53,7 @@ const ItemListContainer = () => {
       console.log(error)
     }) 
 
-    const filteredProducts=productos.filter((producto)=>producto.categoria === category)
+    const filteredProducts=products.filter((producto)=>producto.Categoria === category)
   return (
     <Flex 
     marginTop="40px"

@@ -1,8 +1,28 @@
 import React from 'react'
 import ItemDetail from './ItemDetail'
+import {useEffect, useState} from 'react'
+import { collection, getDocs, getFirestore } from 'firebase/firestore'
 import { Flex } from '@chakra-ui/react'
 
 const ItemDetailContainer = () => {
+
+  const [products,setProducts] =useState([])
+ 
+ 
+  
+  
+     useEffect(()=>{   
+   
+      const database= getFirestore()
+      const miColeccion=collection(database,"Productos")
+      getDocs(miColeccion).then((snapshot)=>{
+      const docs = snapshot.docs.map((doc)=>doc.data())
+      setProducts(docs)
+      
+    })
+  }
+  ,[])
+  
  
   const productos = [
     {id:1, nombre:"Producto A", precio:"300",src:  "../src/assets/jugete1.png" ,descripcion:"soy el item 1", stock:5,categoria:"cat1",cantidad:1},
@@ -16,6 +36,10 @@ const ItemDetailContainer = () => {
     {id:9, nombre:"Producto I", precio:"200",src : "../src/assets/jugete2.jpeg" ,descripcion:"soy el item 9", stock:6,categoria:"cat3",cantidad:1},  
   ]
   
+
+
+
+
   const getProductos=new Promise((resolve, reject)=>{
       if (productos.length > 0){
         setTimeout(() => {
@@ -38,7 +62,7 @@ const ItemDetailContainer = () => {
  
   return (
     <Flex justifyContent="center" alignItems="center">
-    <ItemDetail productos={productos}/>
+    <ItemDetail productos={products}/>
     </Flex>
   )
 }

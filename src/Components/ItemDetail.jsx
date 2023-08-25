@@ -14,11 +14,9 @@ const ItemDetail = ({productos}) => {
   const filteredProducts= productos.filter((producto)=> producto.id==id)
   const precioTotal=(number)=>{
 
-    let total=number*contador
-    
+    let total=number*contador    
     return (total)
-    
-    
+  
   }
   
   const handleClick =()=>{
@@ -40,16 +38,16 @@ const ItemDetail = ({productos}) => {
                 <CardBody boxShadow="dark-lg">
                   <Image
                     w="500px" h="500px"
-                    src={p.src}
+                    src={p.Imagen}
 
                     borderRadius="lg"
                   />
                   <Stack mt="6" spacing="3">
-                    <Heading size="md">{p.nombre}</Heading>
-                    <Text>{p.descripcion}</Text>
+                    <Heading size="md">{p.Nombre}</Heading>
+                    <Text>{p.Descripcion}</Text>
                     <Box display="flex" >
                     <Text color="purple.600" fontSize="50px">
-                      {precioTotal(p.precio)+" $"}
+                      {precioTotal(p.Precio)+" $"}
                     </Text>
                     <Spacer/>
                     <Box display="flex" alignItems="flex-end"  marginBottom="5px">
@@ -61,8 +59,7 @@ const ItemDetail = ({productos}) => {
                   <Button variant="solid" colorScheme="purple" w="100%" onClick={handleClick}>
                      COMPRAR
                     </Button>
-                </CardBody>
-              
+                </CardBody>          
                
                     
                 

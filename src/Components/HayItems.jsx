@@ -17,8 +17,7 @@ const HayItems = () => {
 
     const removeItem=(id)=>{
       
-      const updatedCart=cart.filter(item=>item.id!==id)
-      console.log("jelou",updatedCart,id);
+      const updatedCart=cart.filter(item=>item.id!==id)      
       setCart(updatedCart)
     }
 

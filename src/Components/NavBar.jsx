@@ -31,20 +31,20 @@ const NavBar = () => {
           </MenuButton>
           <MenuList>
            
-            <Link to={`/category/${'cat1'}`}>
+            <Link to={`/category/${'Andadores'}`}>
             <MenuItem _hover={{ bg: 'rgba(160,156,182,100)' ,color:"white" }}>
-              Jugetes
+              Andadores
               </MenuItem>          
               </Link>
             
-            <Link to={`/category/${'cat2'}`}>
+            <Link to={`/category/${'Peluches'}`}>
             <MenuItem _hover={{ bg: 'rgba(160,156,182,100)',color:"white" }}>
-              Cochecitos
+              Peluches
               </MenuItem>
             </Link >
-              <Link to={`/category/${'cat3'}`}>
+              <Link to={`/category/${'Agua&Playa'}`}>
             <MenuItem _hover={{ bg: 'rgba(160,156,182,100)',color:"white" }}>
-              Puericultura y Alimentación
+              Agua&Playa
               </MenuItem>
               </Link>
           </MenuList>
