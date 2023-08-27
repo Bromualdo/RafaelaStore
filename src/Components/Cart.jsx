@@ -7,13 +7,6 @@ import NoHayItems from './NohayItems'
 const Cart = () => {
   const {cart,setCart}=useContext(CartContext)
 
-  
-
-  let acu=0
-  let acutotal=0
-
-
-
   return (
     <>
   {cart.length>0?<HayItems/>:<NoHayItems/>}
