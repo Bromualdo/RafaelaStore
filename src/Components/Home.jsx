@@ -5,6 +5,7 @@ import SendOrder from './SendOrder'
 import { Flex } from '@chakra-ui/react'
 
 const Home = () => {
+
   
   return (
     <Flex flexDirection="column" w="100%" alignItems="center">

@@ -9,7 +9,8 @@ const HayItems = () => {
 
     const[loading,setLoading]=useState(true)
     const[elemento,setElemento]=useState([])
-    const {cart,setCart}=useContext(CartContext)
+    const {cart,setCart,total,setTotal}=useContext(CartContext)
+    
     
     useEffect(()=>{
         setTimeout(()=>{        
@@ -24,44 +25,45 @@ const HayItems = () => {
 
     if(loading){return <Loading/>}
         
-    const emptyCart=()=>{
+    const emptyCart=()=>{      
     
     setCart([])
    
-  } 
-  //hay que implementar reduce en vez de esto//
-  let acu=0
-  let acutotal=0
+  }  
 
+  const SumaTotal = cart.reduce((total,item) => total +item.Precio*item.Cantidad,0)  
+
+  const productoFinal= ()=>setTotal(SumaTotal)
+ 
+
+  
   return (
     <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center">
     {
         
         cart.map((p)=>{          
           
-          acu=p.Precio*p.cantidad
-          acutotal+=acu
+          
 
 
         return(
           <Card w="500px" key={p.id} marginTop="20px" boxShadow="2xl">
           <Box display="flex" >
             <Box>
-            <Image src={p.Imagen} w="150px" h="100px"  borderRight="solid grey 1px"/>
+            <Image src={p.Imagen} w="100%" h="120px"  borderRight="solid grey 1px"/>
             
             </Box>
-            <Box marginLeft="4px">
-            <Text>{p.Nombre}</Text>            
-            <Text>Cantidad: {p.cantidad}</Text>
-            <Text>Precio total: {acu+" $"}</Text>
-            
-            </Box>
-            <Box display="flex" alignItems="center" w="40%">
-            <Box w="100%" display="flex" flexDirection="column">
-            
+            <Box marginLeft="4px" w="40%">
+            <Text>{p.Nombre}</Text>
+                        
+            <Box display="flex" w="150%" flexDirection="column">
+            <Text>Precio por unidad: {p.Precio+" $"}</Text>
+            <Text>Cantidad: {p.Cantidad}</Text>
             </Box>
             </Box>
+            <Box display="flex" w="40%" justifyContent="flex-end" alignItems="flex-start">
             <button onClick={()=>removeItem(p.id)}>x</button>
+            </Box>
           </Box>
           
           </Card>
@@ -69,11 +71,11 @@ const HayItems = () => {
         )
         
       })}
-    <Text>{"Total:"+acutotal}</Text>
+    <Text>{"Total:"+SumaTotal}</Text>
 
     <Button w="500px" onClick= {emptyCart} bgColor="purple.300" color="white" marginTop="20px">Vaciar Carrito</Button>
     <Link to={"/goForm"}>  
-    <Button w="500px" bgColor="purple.300" color="white" marginTop="20px">Finalizar Compra</Button>
+    <Button w="500px" bgColor="purple.300" color="white" marginTop="20px" onClick={productoFinal}>Finalizar Compra</Button>
     </Link>
     
     </Box>

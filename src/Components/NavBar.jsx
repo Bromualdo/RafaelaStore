@@ -11,8 +11,8 @@ const NavBar = () => {
       <Box display="flex">      
       <Link to={"/"}>  
       <Box display="flex" flexDirection="column" alignItems="center">
-        <div id="logo"></div>
-        <div id="slogan">Rafaela</div>
+        <div id="logo" className="animate__animated animate__slideInRight"></div>
+        <div id="slogan" >Rafaela</div>
       </Box> 
       </Link>
        
