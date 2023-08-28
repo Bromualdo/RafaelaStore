@@ -25,7 +25,7 @@ const Collection = () => {
  
 
   return (
-    <Flex w="70%" h="50%"   flexWrap="wrap" gap="2em"  justifyContent="flex-end" alignItems="flex-end" alignContent="flex-end">
+    <Flex w="70%" h="50%"   flexWrap="wrap" gap="2em"  justifyContent="center" alignItems="flex-end" alignContent="flex-end">
       {products.map((p)=>{
         return(
           <Item key={p.id} id={p.id} nombre={p.Nombre} imagen={p.Imagen} precio={p.Precio+" $"}/>

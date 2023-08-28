@@ -30,12 +30,12 @@ const ItemDetail = ({productos}) => {
   
   
   return (
-      <Flex marginTop="20px" >
+      <Flex marginTop="20px" w="30%">
         
         {filteredProducts.map((p)=>{
           return (
             <div key={p.id}>
-              <Card >
+              <Card>
                 <CardBody boxShadow="dark-lg">
                   <Image
                     w="500px" h="500px"
@@ -45,7 +45,7 @@ const ItemDetail = ({productos}) => {
                   />
                   <Stack mt="6" spacing="3">
                     <Heading size="md">{p.Nombre}</Heading>
-                    <Text>{p.Descripcion}</Text>
+                    <Text >{p.Descripcion}</Text>
                     <Box display="flex" >
                     <Text color="purple.600" fontSize="50px">
                       {precioTotal(p.Precio)+" $"}

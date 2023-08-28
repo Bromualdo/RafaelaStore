@@ -8,9 +8,9 @@ const Cart = () => {
   const {cart,setCart}=useContext(CartContext)
 
   return (
-    <>
+    <Flex alignItems="center" justifyContent="center" h="50em">
   {cart.length>0?<HayItems/>:<NoHayItems/>}
-    </>
+    </Flex>
     )
 }
 

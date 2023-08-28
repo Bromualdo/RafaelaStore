@@ -34,7 +34,7 @@ const HayItems = () => {
   let acutotal=0
 
   return (
-    <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" height="600px">
+    <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center">
     {
         
         cart.map((p)=>{          
@@ -51,8 +51,7 @@ const HayItems = () => {
             
             </Box>
             <Box marginLeft="4px">
-            <Text>{p.Nombre}</Text>
-            <Text>{p.Descripcion}</Text>
+            <Text>{p.Nombre}</Text>            
             <Text>Cantidad: {p.cantidad}</Text>
             <Text>Precio total: {acu+" $"}</Text>
             
@@ -73,7 +72,7 @@ const HayItems = () => {
     <Text>{"Total:"+acutotal}</Text>
 
     <Button w="500px" onClick= {emptyCart} bgColor="purple.300" color="white" marginTop="20px">Vaciar Carrito</Button>
-    <Link to={"/sendForm"}>  
+    <Link to={"/goForm"}>  
     <Button w="500px" bgColor="purple.300" color="white" marginTop="20px">Finalizar Compra</Button>
     </Link>
     
