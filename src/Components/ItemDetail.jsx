@@ -2,31 +2,38 @@ import ItemCount from './ItemCount'
 import { useParams } from 'react-router-dom'
 import React, { useContext } from 'react'
 import { CartContext } from '../context/ShoppingCartContext'
-import {  Box,Image,Button,  Flex,CardBody,  Card,  Stack,  Heading,Text,  Spacer, filter} from "@chakra-ui/react";
+import {  Box,Image,Button,  Flex,CardBody,  Card,  Stack,  Heading,Text,  Spacer} from "@chakra-ui/react";
 
 
 
 const ItemDetail = ({productos}) => {
-  const acc=0
+  
   const {id}=useParams()
-  const {setCart,contador,setContador}=useContext(CartContext)  
+  const {cart,setCart,contador,setContador}=useContext(CartContext)  
   const filteredProducts= productos.filter((producto)=> producto.id==id)
-    const precioTotal=(number)=>{
+    
 
+    const precioTotal=(number)=>{
     let total=number*contador    
     return (total)
     }
  
-  const handleClick =()=>{
-    
-
+    const handleClick =()=>{    
     const filter=filteredProducts[0]
-    setContador(current=>filter.Cantidad=current)
-    setCart(current=>[...current,filteredProducts[0]])
-    setContador(1)
-    console.log(filter)
+    if (cart.find((valor)=> valor.id===filter.id)){
+      Swal.fire({
+        icon: 'warning',
+        title : 'ya tienes este producto en tu carrito!',
+        confirmButtonColor: 'rgba(116,94,134,1)'
+      })
+    }
+    else{
+      setContador(current=>filter.Cantidad=current)
+      setCart(current=>[...current,filteredProducts[0]])
+      }
+    setContador(1)    
   }
-  
+
   
   return (
       <Flex marginTop="20px" w="30%">
@@ -56,7 +63,7 @@ const ItemDetail = ({productos}) => {
                     </Box>
                     </Box>
                   </Stack>
-                  <Button id="compro" variant="solid" colorScheme="purple" w="100%" onClick={handleClick}>
+                  <Button variant="solid" colorScheme="purple" w="100%" onClick={handleClick} >
                      COMPRAR
                     </Button>
                 </CardBody>          

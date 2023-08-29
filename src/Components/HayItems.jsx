@@ -37,6 +37,7 @@ const HayItems = () => {
   const productoFinal= ()=>setTotal(SumaTotal)
  
   const asegurarse =()=>{ Swal.fire({
+    icon: 'error',
     title: 'Estas seguro que quieres vaciar el carrito?',
     text: 'todos tus productos se borraran!',
     showCancelButton: true,
@@ -44,6 +45,7 @@ const HayItems = () => {
     confirmButtonText: 'Si estoy seguro!',
     cancelButtonColor: 'rgba(89,63,111,1)',
     confirmButtonColor: 'rgba(116,94,134,1)',
+    reverseButtons: true
     
   }).then((result)=>{
     if (result.isConfirmed){
@@ -67,7 +69,7 @@ return (
             showCancelButton: true,
             cancelButtonText: 'Volver',
             confirmButtonText: 'Si estoy seguro!',
-            cancelButtonColor: 'rgba(89,63,111,1)',
+            cancelButtonColor: "orange" ,
             confirmButtonColor: 'rgba(116,94,134,1)',
             reverseButtons: true
             
@@ -94,7 +96,7 @@ return (
             <Text>Cantidad: {p.Cantidad}</Text>
             </Box>
             </Box>
-            <Box display="flex" w="40%" justifyContent="flex-end" alignItems="flex-start">
+            <Box display="flex" w="50%" justifyContent="flex-end" alignItems="flex-start">
             <button onClick={confirmaElimina}><CloseIcon/></button>
             </Box>
           </Box>
@@ -104,7 +106,7 @@ return (
         )
         
       })}
-    <Text  fontSize="50px">{"Total:"+SumaTotal}</Text>
+    <Text  fontSize="50px">{"Total:"+SumaTotal+" $"}</Text>
       <Box w="100%" display="flex" justifyContent="space-between">
     <Button w="30%" onClick= {asegurarse} bgColor="red.300" color="white" marginTop="20px">Vaciar Carrito</Button>
     <Link to={"/goForm"}>  
