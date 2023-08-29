@@ -10,6 +10,7 @@ export const ShoppingCartProvider=({children})=>{
     const [contador, setContador] = useState(1);
     const [total,setTotal]=useState(0)  
     const [productos,setProductos] =useState([]) 
+    const [Resultado,setResultado]=useState([])
   
   
      useEffect(()=>{   
@@ -26,7 +27,7 @@ export const ShoppingCartProvider=({children})=>{
 
     
     return(
-        <CartContext.Provider value={{cart ,setCart,contador,setContador,total,setTotal,productos}}>            {children}
+        <CartContext.Provider value={{cart ,setCart,contador,setContador,total,setTotal,productos,Resultado,setResultado}}>            {children}
 
         </CartContext.Provider>
         

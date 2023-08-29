@@ -7,7 +7,7 @@ import About from './Components/About'
 import Contact from './Components/Contact'
 import Cart from './Components/Cart'
 import SendOrder from './Components/SendOrder'
-import Encontro from './Components/Busqueda'
+import Encontro from './Components/Encontro'
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import ShoppingCartContext from './context/ShoppingCartContext'
 
