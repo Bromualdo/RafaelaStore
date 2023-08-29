@@ -5,7 +5,7 @@ import HayItems from './HayItems'
 import NoItems from './NoItems'
 
 const Cart = () => {
-  const {cart,setCart}=useContext(CartContext)
+  const {cart}=useContext(CartContext)
 
   return (
     <Flex alignItems="center" justifyContent="center" h="50em">
