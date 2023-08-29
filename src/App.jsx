@@ -7,6 +7,7 @@ import About from './Components/About'
 import Contact from './Components/Contact'
 import Cart from './Components/Cart'
 import SendOrder from './Components/SendOrder'
+import Encontro from './Components/Busqueda'
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import ShoppingCartContext from './context/ShoppingCartContext'
 
@@ -28,6 +29,7 @@ const App = () => {
           <Route exact path="/category/:category" element={<ItemListContainer />}/>
           <Route exact path="/item/:id" element={<ItemDetailContainer />} />
           <Route exact path="/goForm" element={<SendOrder/>}/>
+          <Route exact path="/search" element={<Encontro/>}/>
         </Routes>
         </ShoppingCartContext>      
       </BrowserRouter>

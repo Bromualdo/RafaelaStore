@@ -1,4 +1,3 @@
-
 import {collection,addDoc,getFirestore} from "firebase/firestore"
 import {useState,useContext} from "react"
 import { CartContext } from '../context/ShoppingCartContext'
@@ -95,12 +94,12 @@ const SendOrder = () =>{
             <Input type="text" placeholder="Apellido" _focus={{ borderColor:"purple" }}
             onChange={(e)=>setlastName(e.target.value)} w="20%"/>
             </Box>
-            <Box display="flex" w="100%" justifyContent="center" align marginTop="10px" alignItems="flex-end">
+            <Box display="flex" w="100%" justifyContent="center"  marginTop="10px" alignItems="flex-end">
             <FormLabel>Email :</FormLabel>
             <Input type="text" placeholder="Ingrese Email" _focus={{ borderColor:"purple" }}
             onChange={(e)=>setEmail(e.target.value)} w="55%"/>
             </Box>
-            <Box display="flex" w="92%" justifyContent="center" align marginTop="10px" alignItems="flex-end">
+            <Box display="flex" w="92%" justifyContent="center"  marginTop="10px" alignItems="flex-end">
             <FormLabel>Direccion :</FormLabel>
             <Input type="text" placeholder="Direccion" _focus={{ borderColor:"purple" }}
             onChange={(e)=>setAdress(e.target.value)} w="55%"/>
