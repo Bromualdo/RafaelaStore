@@ -14,9 +14,7 @@
 
 ### Librerias utilizadas:
 
-[SweetAlert](https://sweetalert2.github.io/)
-[Animate.css](https://animate.style/)
-
-
-[Breve video de la app](https://www.loom.com/share/03b0b26549be47abbb534854d602bed9)
+[SweetAlert](https://sweetalert2.github.io/)</br>
+[Animate.css](https://animate.style/)</br>
+[Breve video de la app](https://www.loom.com/share/03b0b26549be47abbb534854d602bed9)</br>
 [Linkedin](https://www.linkedin.com/in/adrianpozzi/)
