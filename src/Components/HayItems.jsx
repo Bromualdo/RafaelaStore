@@ -4,6 +4,7 @@ import { CartContext } from '../context/ShoppingCartContext'
 import { Card, Flex, Text,Image, Box,Button } from '@chakra-ui/react'
 import Loading from './Loading'
 import {Link} from 'react-router-dom'
+import { CloseIcon } from '@chakra-ui/icons'
 
 const HayItems = () => {
 
@@ -35,15 +36,47 @@ const HayItems = () => {
 
   const productoFinal= ()=>setTotal(SumaTotal)
  
+  const asegurarse =()=>{ Swal.fire({
+    title: 'Estas seguro que quieres vaciar el carrito?',
+    text: 'todos tus productos se borraran!',
+    showCancelButton: true,
+    cancelButtonText: 'Volver',
+    confirmButtonText: 'Si estoy seguro!',
+    cancelButtonColor: 'rgba(89,63,111,1)',
+    confirmButtonColor: 'rgba(116,94,134,1)',
+    
+  }).then((result)=>{
+    if (result.isConfirmed){
+      emptyCart()
+    }
+  })
 
   
-  return (
+}
+
+return (
     <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center">
     {
         
         cart.map((p)=>{          
           
-          
+          const confirmaElimina=()=>{Swal.fire({
+            title: 'Seguro? que quieres eliminar?',
+            
+            icon: 'error',
+            showCancelButton: true,
+            cancelButtonText: 'Volver',
+            confirmButtonText: 'Si estoy seguro!',
+            cancelButtonColor: 'rgba(89,63,111,1)',
+            confirmButtonColor: 'rgba(116,94,134,1)',
+            reverseButtons: true
+            
+          }).then((result)=>{
+            if (result.isConfirmed){
+              removeItem(p.id)
+            }
+            
+          })}
 
 
         return(
@@ -62,7 +95,7 @@ const HayItems = () => {
             </Box>
             </Box>
             <Box display="flex" w="40%" justifyContent="flex-end" alignItems="flex-start">
-            <button onClick={()=>removeItem(p.id)}>x</button>
+            <button onClick={confirmaElimina}><CloseIcon/></button>
             </Box>
           </Box>
           
@@ -71,13 +104,13 @@ const HayItems = () => {
         )
         
       })}
-    <Text>{"Total:"+SumaTotal}</Text>
-
-    <Button w="500px" onClick= {emptyCart} bgColor="purple.300" color="white" marginTop="20px">Vaciar Carrito</Button>
+    <Text  fontSize="50px">{"Total:"+SumaTotal}</Text>
+      <Box w="100%" display="flex" justifyContent="space-between">
+    <Button w="30%" onClick= {asegurarse} bgColor="red.300" color="white" marginTop="20px">Vaciar Carrito</Button>
     <Link to={"/goForm"}>  
-    <Button w="500px" bgColor="purple.300" color="white" marginTop="20px" onClick={productoFinal}>Finalizar Compra</Button>
+    <Button w="100%" bgColor="purple.300" color="white" marginTop="20px" onClick={productoFinal}>Finalizar Compra</Button>
     </Link>
-    
+    </Box>
     </Box>
   )
 }

@@ -1,25 +1,16 @@
 
 import { FaShoppingBag } from "react-icons/fa";
 import { Flex, Box,Spacer,Text} from "@chakra-ui/react";
-import React, { useContext } from 'react'
+import React, { useContext, useState,useEffect } from 'react'
 import { CartContext } from '../context/ShoppingCartContext'
 
 const CartWidget = () => {
   
 const {cart}=useContext(CartContext)
 const cartLen=cart.length
+const [animacion,setAnimacion]=useState('') 
 
-const valor=document.getElementById('valor')
 
-const muestroNumero= ()=>{
-  if (cartLen>0){
-    return (
-      <p id="valor" className="me_anime">{cartLen}</p>
-    ) 
-  }else {
-    <p id="valor" className="me_animare">{cartLen}</p>
-  }
-}
 
 
 
@@ -46,7 +37,7 @@ const muestroNumero= ()=>{
         borderRadius="10"     
         
         >
-        {muestroNumero()}
+        {<p className="animate__animated animate__bounceInRight">{cartLen}</p> }
       </Box>
       
     </Flex>

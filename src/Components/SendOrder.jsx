@@ -27,12 +27,51 @@ const SendOrder = () =>{
    
   
 
-    const handleSubmit = (e)=>{
-    e.preventDefault()
+    const handleSubmit = ()=>{    
     addDoc(ordersCollection,order).then(({id})  =>
         setOrderId(id))
     }
 
+    const validacionFinal=(e)=>{ 
+        e.preventDefault()       
+        Swal.fire({
+            
+            title: `${name} confirma si esto es correcto`,
+            text: `nombre: ${name}
+                   apellido: ${lastName} \n
+                    y la factura total es de ${total} pesos` ,
+            showCancelButton: true,
+            cancelButtonText: 'Espera algo anda mal',
+            confirmButtonText: 'Confirmar',
+            confirmButtonColor: 'green',
+            cancelButtonColor: 'red',
+            reverseButtons: true
+            
+          }).then((result)=>{
+            if (result.isConfirmed){
+                
+             handleSubmit()
+              const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                  toast.addEventListener('mouseenter', Swal.stopTimer)
+                  toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+              })
+              
+              Toast.fire({
+                icon: 'success',
+                title: 'Compra realizada con exito!'
+              })
+              
+            }
+          })
+        
+    }
     
     const order ={
             buyer: { nombre: name,apellido:lastName,email:email},
@@ -40,13 +79,13 @@ const SendOrder = () =>{
             total:  total
         }   
     
-    const ordersCollection =collection(db,"orden")
+    const ordersCollection =collection(db,"Facturas")
 
   return (
     <Flex display="flex" w="100%" alignItems="center" justifyContent="center"  h="500px" marginTop="20px">
     <Card w="40%" display="flex" alignItems="center">
         <h1>Ingrese sus datos para finalizar la compra</h1>
-        <form onSubmit={handleSubmit}  >
+        <form onSubmit={validacionFinal}  >
             
             <Box display="flex" alignItems="flex-end"  justifyContent="center"  marginTop="25px">
             <FormLabel>Nombre :</FormLabel>
