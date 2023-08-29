@@ -1,7 +1,7 @@
 import {collection,addDoc,getFirestore} from "firebase/firestore"
 import {useState,useContext} from "react"
 import { CartContext } from '../context/ShoppingCartContext'
-import {FormControl,FormLabel,FormErrorMessage,FormHelperText,Card,Input,Button,Box, Flex,Text} from '@chakra-ui/react'
+import {FormLabel,Card,Input,Button,Box, Flex,Text} from '@chakra-ui/react'
 
 const SendOrder = () =>{
 
@@ -83,7 +83,8 @@ const SendOrder = () =>{
   return (
     <Flex display="flex" w="100%" alignItems="center" justifyContent="center"  h="500px" marginTop="20px">
     <Card w="40%" display="flex" alignItems="center">
-        <h1>Ingrese sus datos para finalizar la compra</h1>
+    <Text fontFamily='Butterfly Kids' fontSize="50px" >Ingrese sus datos para finalizar la compra</Text>
+      
         <form onSubmit={validacionFinal}  >
             
             <Box display="flex" alignItems="flex-end"  justifyContent="center"  marginTop="25px">
@@ -91,17 +92,17 @@ const SendOrder = () =>{
             <Input type="text" placeholder="Nombre" _focus={{ borderColor:"purple" }} isRequired
             onChange={(e)=>setName(e.target.value)} w="20%"/>
             <FormLabel marginLeft="10px">Apellido :</FormLabel>
-            <Input type="text" placeholder="Apellido" _focus={{ borderColor:"purple" }}
+            <Input type="text" placeholder="Apellido" _focus={{ borderColor:"purple" }} isRequired
             onChange={(e)=>setlastName(e.target.value)} w="20%"/>
             </Box>
             <Box display="flex" w="100%" justifyContent="center"  marginTop="10px" alignItems="flex-end">
             <FormLabel>Email :</FormLabel>
-            <Input type="text" placeholder="Ingrese Email" _focus={{ borderColor:"purple" }}
+            <Input type="text" placeholder="Ingrese Email" _focus={{ borderColor:"purple" }} isRequired
             onChange={(e)=>setEmail(e.target.value)} w="55%"/>
             </Box>
             <Box display="flex" w="92%" justifyContent="center"  marginTop="10px" alignItems="flex-end">
             <FormLabel>Direccion :</FormLabel>
-            <Input type="text" placeholder="Direccion" _focus={{ borderColor:"purple" }}
+            <Input type="text" placeholder="Direccion" _focus={{ borderColor:"purple" }} isRequired
             onChange={(e)=>setAdress(e.target.value)} w="55%"/>
             </Box>
             

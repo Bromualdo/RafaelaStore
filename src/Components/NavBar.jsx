@@ -14,6 +14,7 @@ import Busqueda from "./Busqueda";
 import CartWidget from "./CartWidget";
 
 import { Link } from "react-router-dom";
+import Ubicacion from "./Ubicacion";
 
 const NavBar = () => {
   return (
@@ -42,14 +43,14 @@ const NavBar = () => {
                 _hover={{ bg: "rgba(160,156,182,100)" }}
                 color="white"
                 alignItems="center"
-              >
+                >
                 Tienda Bebé
               </MenuButton>
               <MenuList>
                 <Link to={`/category/${"Andadores"}`}>
                   <MenuItem
                     _hover={{ bg: "rgba(160,156,182,100)", color: "white" }}
-                  >
+                    >
                     Andadores
                   </MenuItem>
                 </Link>
@@ -57,18 +58,24 @@ const NavBar = () => {
                 <Link to={`/category/${"Peluches"}`}>
                   <MenuItem
                     _hover={{ bg: "rgba(160,156,182,100)", color: "white" }}
-                  >
+                    >
                     Peluches
                   </MenuItem>
                 </Link>
                 <Link to={`/category/${"Agua&Playa"}`}>
                   <MenuItem
                     _hover={{ bg: "rgba(160,156,182,100)", color: "white" }}
-                  >
+                    >
                     Agua&Playa
                   </MenuItem>
                 </Link>
               </MenuList>
+              <Link to ={"/ubicacion"}>
+              <Button bgColor="rgba(89,63,111,0.01)" _hover={{ bg: "rgba(160,156,182,100)" }} color="white">Donde Estamos?</Button>
+              </Link>
+              <Link to ={"/contact"}>
+              <Button bgColor="rgba(89,63,111,0.01)" _hover={{ bg: "rgba(160,156,182,100)" }} color="white">Contacto</Button>         
+              </Link>
             </Menu>
           </Box>
         </Box>
