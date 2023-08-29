@@ -20,6 +20,6 @@
 [SweetAlert](https://sweetalert2.github.io/)</br>
 [Animate.css](https://animate.style/)</br>
 
-###_Mi Linkedin:_
+### _Mi Linkedin:_
 
 [Linkedin](https://www.linkedin.com/in/adrianpozzi/)
