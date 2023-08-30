@@ -1,7 +1,7 @@
 
 import { FaShoppingBag } from "react-icons/fa";
-import { Flex, Box,Spacer,Text} from "@chakra-ui/react";
-import React, { useContext, useState,useEffect } from 'react'
+import { Flex, Box,Spacer} from "@chakra-ui/react";
+import React, { useContext} from 'react'
 import { CartContext } from '../context/ShoppingCartContext'
 
 const CartWidget = () => {

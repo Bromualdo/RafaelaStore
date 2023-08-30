@@ -8,13 +8,13 @@ const Encontro = () => {
 
 const {Resultado}=useContext(CartContext)  
 
-console.log(Resultado);
+
   return (
     <>
     <Flex justifyContent="center" alignItems="center" marginTop="20px">
     <ItemList  productos={Resultado}/>
     </Flex>
-      </>
+    </>
   )
 }
 

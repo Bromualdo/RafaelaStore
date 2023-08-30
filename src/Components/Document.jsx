@@ -1,6 +1,6 @@
 import { useEffect,useState } from "react"
 import {doc,getDoc,getFirestore} from 'firebase/firestore'
-import {Image} from '@chakra-ui/react'
+
 const Documents = () => {
 
   const [product, setProduct]=useState([])

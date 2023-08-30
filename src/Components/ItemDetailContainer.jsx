@@ -1,6 +1,5 @@
 import React from 'react'
 import ItemDetail from './ItemDetail'
-import {useEffect, useState} from 'react'
 import { CartContext } from '../context/ShoppingCartContext'
 import { useContext } from 'react'
 import { Flex } from '@chakra-ui/react'
