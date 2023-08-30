@@ -73,9 +73,9 @@ const SendOrder = () =>{
     }
     
     const order ={
-            buyer: { nombre: name,apellido:lastName,email:email},
+            buyer: { nombre: name,apellido:lastName,email:email,direccion:adress},
             items: lastCart,
-            total:  total
+            total:  total            
         }   
     
     const ordersCollection =collection(db,"Facturas")

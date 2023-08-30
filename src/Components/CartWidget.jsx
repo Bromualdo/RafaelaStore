@@ -8,16 +8,7 @@ const CartWidget = () => {
   
 const {cart}=useContext(CartContext)
 const cartLen=cart.length
-const [animacion,setAnimacion]=useState('') 
-
-
-
-
-
-
-
-
-  
+   
 
 
   return (

@@ -1,7 +1,7 @@
 
 import React, { useContext, useState,useEffect } from 'react'
 import { CartContext } from '../context/ShoppingCartContext'
-import { Card, Flex, Text,Image, Box,Button } from '@chakra-ui/react'
+import { Card, Text,Image, Box,Button } from '@chakra-ui/react'
 import Loading from './Loading'
 import {Link} from 'react-router-dom'
 import { CloseIcon } from '@chakra-ui/icons'
@@ -9,8 +9,8 @@ import { CloseIcon } from '@chakra-ui/icons'
 const HayItems = () => {
 
     const[loading,setLoading]=useState(true)
-    const[elemento,setElemento]=useState([])
-    const {cart,setCart,total,setTotal}=useContext(CartContext)
+    
+    const {cart,setCart,setTotal}=useContext(CartContext)
     
     
     useEffect(()=>{
