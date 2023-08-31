@@ -31,7 +31,7 @@ const Busqueda = () => {
         <Input placeholder='Que estas buscando?' _focus={{ borderColor:"purple" }} onChange={(e) =>setBusqueda(e.target.value)} />
         <InputRightElement>
         <Link to={'/search'}>
-        <Button type="submit" borderRadius="0 5px 5px 0" ><SearchIcon color="purple.500" fontSize="25px" onClick={EfectuarBusqueda} /></Button>
+        <Button borderRadius="0 5px 5px 0" ><SearchIcon color="purple.500" fontSize="25px" onClick={EfectuarBusqueda} /></Button>
         </Link>
         </InputRightElement>
     </InputGroup>

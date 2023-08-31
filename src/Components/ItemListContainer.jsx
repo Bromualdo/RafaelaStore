@@ -20,7 +20,7 @@ const ItemListContainer = () => {
     w="100%"
     justifyContent="center"
     >      
-            
+          
       <ItemList  productos={filteredProducts}/>
       
     </Flex>

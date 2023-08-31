@@ -9,13 +9,16 @@ const Collection = () => {
   
   const {productos} =useContext(CartContext)  
  
- 
+ let nombreAco=""
 
   return (
     <Flex w="70%" h="50%"   flexWrap="wrap" gap="2em"  justifyContent="center" alignItems="flex-end" alignContent="flex-end">
       {productos.map((p)=>{
+        if (p.Nombre.length > 20){
+            nombreAco=p.Nombre.slice(0,20)
+        }
         return(
-          <Item key={p.id} id={p.id} nombre={p.Nombre} imagen={p.Imagen} precio={p.Precio+" $"}/>
+          <Item key={p.id} id={p.id} nombre={nombreAco} imagen={p.Imagen} precio={p.Precio+" $"}/>
         
         )
       })}
