@@ -14,9 +14,10 @@ const Collection = () => {
   return (
     <Flex w="70%" h="50%"   flexWrap="wrap" gap="2em"  justifyContent="center" alignItems="flex-end" alignContent="flex-end">
       {productos.map((p)=>{
-        if (p.Nombre.length > 20){
-            nombreAco=p.Nombre.slice(0,20)
-        }
+       p.Nombre.length > 20?   nombreAco=p.Nombre.slice(0,20):nombreAco=p.Nombre 
+           
+           
+        
         return(
           <Item key={p.id} id={p.id} nombre={nombreAco} imagen={p.Imagen} precio={p.Precio+" $"}/>
         
